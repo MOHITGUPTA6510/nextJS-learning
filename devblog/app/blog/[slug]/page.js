@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { posts } from "../../lib/posts";
+import LikeButton from "../../../components/LikeButton";
 
 export default async function BlogPost({ params }) {
   const { slug } = await params;
@@ -28,6 +29,7 @@ export default async function BlogPost({ params }) {
       <article>
         {post.content}
       </article>
+      <LikeButton />
 
     </main>
   );
