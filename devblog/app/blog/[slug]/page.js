@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { posts } from "../../lib/posts";
 import LikeButton from "../../../components/LikeButton";
+import CommentForm from "../../../components/CommentForm";
 
 export default async function BlogPost({ params }) {
   const { slug } = await params;
@@ -30,7 +31,7 @@ export default async function BlogPost({ params }) {
         {post.content}
       </article>
       <LikeButton />
-
+      <CommentForm />
     </main>
   );
 }

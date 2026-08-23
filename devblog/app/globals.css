@@ -461,3 +461,57 @@ body {
 .like-button:hover {
   background-color: #1d4ed8;
 }
+
+/* =========================
+   Comment Form
+========================= */
+.comment-form {
+  max-width: 600px;
+  margin-top: 50px;
+
+  padding: 30px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+
+  background-color: white;
+}
+
+.comment-form h2 {
+  margin-bottom: 20px;
+}
+
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+
+  margin-bottom: 15px;
+  padding: 12px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.comment-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.comment-form button {
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #2563eb;
+  color: white;
+
+  cursor: pointer;
+}
+
+.comment-form button:hover {
+  background-color: #1d4ed8;
+}
