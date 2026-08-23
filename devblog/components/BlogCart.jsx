@@ -1,11 +1,17 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function BlogCard({ post }) {
   return (
     <article className="post-card">
 
       <div className="post-image">
-        {post.category}
+        <Image
+          src={post.image}
+          alt={post.title}
+          width={600}
+          height={350}
+        />
       </div>
 
       <div className="post-content">

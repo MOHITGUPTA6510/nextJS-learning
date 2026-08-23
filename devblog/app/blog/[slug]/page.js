@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { posts } from "../../lib/posts";
 import LikeButton from "../../../components/LikeButton";
 import CommentForm from "../../../components/CommentForm";
+import Image from "next/image";
 
 
 export async function generateMetadata({ params }) {
@@ -40,6 +41,14 @@ export default async function BlogPost({ params }) {
       <h1>
         {post.title}
       </h1>
+
+      <Image
+        src={post.image}
+        alt={post.title}
+        width={1000}
+        height={600}
+        className="blog-post-image"
+      />
 
       <p className="post-description">
         {post.description}
