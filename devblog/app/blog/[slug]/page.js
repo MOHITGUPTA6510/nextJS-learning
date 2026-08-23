@@ -3,6 +3,24 @@ import { posts } from "../../lib/posts";
 import LikeButton from "../../../components/LikeButton";
 import CommentForm from "../../../components/CommentForm";
 
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+
+  const post = posts.find((post) => post.slug === slug);
+
+  if (!post) {
+    return {
+      title: "Post Not Found | DevBlog",
+    };
+  }
+
+  return {
+    title: `${post.title} | DevBlog`,
+    description: post.description,
+  };
+}
+
 export default async function BlogPost({ params }) {
   const { slug } = await params;
 
