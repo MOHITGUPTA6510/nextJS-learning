@@ -1,7 +1,12 @@
 import BlogCart from "../../components/BlogCart";
 import { posts } from "../lib/posts";
 
-export default function BlogPage() {
+export default async function BlogPage() {
+
+  await new Promise((resolve) => {
+    setTimeout(resolve, 3000);
+  });
+
   return (
     <main className="blog-page">
 
