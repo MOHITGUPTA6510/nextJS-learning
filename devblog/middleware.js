@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 
 export function middleware(request) {
-  const isLoggedIn = request.cookies.get("isLoggedIn");
+  const isLoggedIn =
+    request.cookies.get("isLoggedIn")?.value;
 
   if (!isLoggedIn) {
     return NextResponse.redirect(

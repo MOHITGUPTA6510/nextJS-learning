@@ -544,3 +544,105 @@ body {
 
   border-radius: 12px;
 }
+
+/* =========================
+   Login Page
+========================= */
+
+.login-page {
+  min-height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+}
+
+.login-page h1 {
+  margin-bottom: 25px;
+
+  font-size: 40px;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.login-form input {
+  padding: 12px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  font-size: 16px;
+}
+
+.login-form button {
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+/* =========================
+   Admin page
+========================= */
+.admin-page {
+  min-height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 40px;
+}
+
+.admin-page h1 {
+  margin-bottom: 15px;
+
+  font-size: 40px;
+}
+
+.admin-page p {
+  margin-bottom: 25px;
+
+  color: #64748b;
+}
+
+.admin-page button {
+  padding: 12px 25px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #dc2626;
+
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+}
