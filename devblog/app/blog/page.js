@@ -3,6 +3,8 @@ import { posts } from "../lib/posts";
 
 export default async function BlogPage() {
 
+  // throw new Error("Testing blog error");
+
   await new Promise((resolve) => {
     setTimeout(resolve, 3000);
   });
