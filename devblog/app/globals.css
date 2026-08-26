@@ -107,3 +107,71 @@ a {
 .home-explore-button:hover{
   background-color: #0a0a0a;
 }
+
+/*------------------------------------
+      blog page
+--------------------------------------*/
+
+.blog-page{
+  margin: 0 auto;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.blog-heading{
+  margin: 50px;
+}
+
+.blog-para{
+  margin: 50px;
+}
+
+.blog-explore-button{
+  margin: 0 auto;
+
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: gray;
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 20px;
+}
+
+.blog-explore-button:hover{
+  background-color: #0a0a0a;
+}
+
+/*------------------------------------
+      Contact page
+--------------------------------------*/
+
+.contact-page{
+  margin: 0 auto;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.contact-heading{
+  margin: 50px;
+}
+
+.contact-para{
+  margin: 50px;
+}
+
+.contact-explore-button{
+  margin: 0 auto;
+
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: gray;
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 20px;
+}
+
+.contact-explore-button:hover{
+  background-color: #0a0a0a;
+}
