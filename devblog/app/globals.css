@@ -47,3 +47,29 @@ a {
     color-scheme: dark;
   }
 }
+
+/*------------------------------------
+      NavBar
+--------------------------------------*/
+
+.navbar{
+  display :flex;
+  justify-content: space-between;
+  align-items: center;
+  margin : 10px;
+  color: #f4f1f1;
+  background-color: rgb(69, 12, 95);
+  padding: 10px;
+}
+
+.nav-logo{
+  font-weight: bold;
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+.nav-links{
+  margin-right: 30px;
+  display: flex;
+  gap: 25px;
+}
