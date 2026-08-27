@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main 
       className="home-page"
@@ -16,7 +16,7 @@ export default function Home() {
         Learn Web Development through the practical articles.
       </p>
       <Link 
-        href=  "/blog" 
+        href= "/blog" 
         className="home-explore-button" 
       >
         Explore Blog 

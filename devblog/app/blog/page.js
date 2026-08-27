@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Home() {
+export default function BlogPage() {
   return (
     <main 
       className="blog-page"
