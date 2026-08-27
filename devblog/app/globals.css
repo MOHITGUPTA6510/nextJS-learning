@@ -214,3 +214,42 @@ a {
 .blog-card-link:hover{
   text-decoration: underline;
 }
+
+/*------------------------------------
+      BlogCard content
+--------------------------------------*/
+
+.slug-page{
+  margin: 0 auto;
+  text-align: center;
+  border: 2px solid white;
+  margin: 20px;
+  padding: 30px;
+  padding-bottom: 70px;
+}
+.slug-page-heading{
+  margin-bottom: 20px;
+}
+
+.slug-page-author{
+  text-align: left;
+  padding-top: 20px;
+}
+
+.slug-page-date{
+  text-align: left;
+  padding-bottom: 20px;
+}
+
+.slug-page-description{
+  padding: 10px;
+}
+
+.slug-page-link{
+  display: inline-block;
+  cursor: pointer;
+}
+
+.slug-page-link:hover{
+  text-decoration: underline;
+}

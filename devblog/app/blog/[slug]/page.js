@@ -16,13 +16,14 @@ export default async function SlugPost({params}){
 
     return (
         
-        <div>
-            <h1>{data.heading}</h1>
-            <p>By {data.author}</p>
-            <p>{data.date}</p>
-            <p>{data.description}</p>
-            <p>{data.content}</p>
-            <Link href="/blog">Back to blog</Link>
+        <div className="slug-page">
+            <h1 className="slug-page-heading">{data.heading}</h1>
+            
+            <p className="slug-page-description">{data.description}</p>
+            <p className="slug-page-para">{data.content}</p>
+            <p className="slug-page-author">By {data.author}</p>
+            <p className="slug-page-date">{data.date}</p>
+            <Link href="/blog" className="slug-page-link">Back to Blog</Link>
         </div>
         
     );
