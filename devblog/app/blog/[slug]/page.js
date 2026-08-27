@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {blogs} from "@/data/blogs";
+import LikeButton from "@/components/LikeButton";
 
 export default async function SlugPost({params}){
     console.log("Running on the server");
@@ -24,6 +25,9 @@ export default async function SlugPost({params}){
             <p className="slug-page-author">By {data.author}</p>
             <p className="slug-page-date">{data.date}</p>
             <Link href="/blog" className="slug-page-link">Back to Blog</Link>
+            <br></br>
+
+            <LikeButton className/>
         </div>
         
     );
