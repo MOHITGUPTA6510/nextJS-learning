@@ -175,3 +175,42 @@ a {
 .contact-explore-button:hover{
   background-color: #0a0a0a;
 }
+
+/*------------------------------------
+      BlogCard content
+--------------------------------------*/
+.blog-card-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.blog-card{
+  background-color: rgb(2, 0, 0);
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 2px solid white;
+}
+.blog-card-heading{
+  padding: 20px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  
+}
+
+.blog-card-para{
+  padding: 20px ;
+  padding-left: 0px ;
+}
+
+.blog-card-link{
+  display: inline-block;
+  cursor: pointer;
+  padding-bottom: 20px;
+}
+
+.blog-card-link:hover{
+  text-decoration: underline;
+}

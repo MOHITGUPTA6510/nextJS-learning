@@ -1,7 +1,9 @@
 import Link from "next/link";
+import BlogCard from "@/components/BlogCard";
 
 export default function BlogPage() {
   return (
+    <>
     <main 
       className="blog-page"
     >
@@ -23,5 +25,11 @@ export default function BlogPage() {
       </Link>
       
     </main>
+    <div className="blog-card-container">
+    <BlogCard heading={"Next.js routing"} description={"Learning about the routing ...."}/>
+    <BlogCard heading={"React Components"} description={"Learning about the react components ...."}/>
+    <BlogCard heading={"JavaScript Fundamentals"} description={"Learning about the javascript fundamentals  ...."}/>
+    </div>
+    </>
   );
 }
