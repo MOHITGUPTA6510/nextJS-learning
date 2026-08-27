@@ -7,17 +7,20 @@ export default function BlogPage() {
     {
       id : 1,
       heading: "Next.js routing",
-      description: "Learning about the routing ...."
+      description: "Learning about the routing ....",
+      slug : "nextjs-routing"
     },
     {
       id : 2,
       heading: "React Components",
-      description: "Learning about the react components ...."
+      description: "Learning about the react components ....",
+      slug : "react-components"
     },
     {
       id : 3,
       heading: "JavaScript Fundamentals",
-      description: "Learning about the javascript fundamentals  ...."
+      description: "Learning about the javascript fundamentals  ....",
+      slug : "javascript-fundamentals"
     }
   ]
 
@@ -49,7 +52,7 @@ export default function BlogPage() {
           blogs.map((blog) => {
             return(
               
-                <BlogCard  heading={blog.heading} description={blog.description} key ={blog.id}/>
+                <BlogCard  heading={blog.heading} description={blog.description} key ={blog.id} slug ={blog.slug}/>
               
             );
           })
