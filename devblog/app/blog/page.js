@@ -2,6 +2,25 @@ import Link from "next/link";
 import BlogCard from "@/components/BlogCard";
 
 export default function BlogPage() {
+
+  const blogs = [
+    {
+      id : 1,
+      heading: "Next.js routing",
+      description: "Learning about the routing ...."
+    },
+    {
+      id : 2,
+      heading: "React Components",
+      description: "Learning about the react components ...."
+    },
+    {
+      id : 3,
+      heading: "JavaScript Fundamentals",
+      description: "Learning about the javascript fundamentals  ...."
+    }
+  ]
+
   return (
     <>
     <main 
@@ -25,10 +44,16 @@ export default function BlogPage() {
       </Link>
       
     </main>
-    <div className="blog-card-container">
-    <BlogCard heading={"Next.js routing"} description={"Learning about the routing ...."}/>
-    <BlogCard heading={"React Components"} description={"Learning about the react components ...."}/>
-    <BlogCard heading={"JavaScript Fundamentals"} description={"Learning about the javascript fundamentals  ...."}/>
+    <div className="blog-card-container" >
+        {
+          blogs.map((blog) => {
+            return(
+              
+                <BlogCard  heading={blog.heading} description={blog.description} key ={blog.id}/>
+              
+            );
+          })
+        }
     </div>
     </>
   );
