@@ -1,8 +1,12 @@
 import Link from "next/link";
 import BlogCard from "@/components/BlogCard";
-import {blogs} from "@/data/blogs";
+// import {blogs} from "@/data/blogs";
 
-export default function BlogPage() {
+export default async function BlogPage() {
+
+  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const data = await response.json();
+
   return (
     <>
     <main 
@@ -28,10 +32,10 @@ export default function BlogPage() {
     </main>
     <div className="blog-card-container" >
         {
-          blogs.map((blog) => {
+          data.map((blog) => {
             return(
               
-                <BlogCard  heading={blog.heading} description={blog.description} key ={blog.id} slug ={blog.slug}/>
+                <BlogCard  heading={blog.title} description={blog.body} key ={blog.id} slug ={blog.title.toLowerCase().replaceAll(" ", "-")}/>
               
             );
           })
