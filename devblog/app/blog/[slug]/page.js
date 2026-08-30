@@ -1,8 +1,17 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import LikeButton from "@/components/LikeButton";
-import {getPostBySlug} from "@/lib/posts";
+import {getPostBySlug , getPosts} from "@/lib/posts";
 
+
+export async function generateStaticParams() {
+    const posts = await getPosts();
+
+    return posts.map((post) => ({
+        slug: post.title.toLowerCase().replaceAll(" ", "-")
+    }));
+    
+}
 
 export async function generateMetadata({params}){
 
