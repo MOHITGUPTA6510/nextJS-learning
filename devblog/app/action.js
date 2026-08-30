@@ -1,12 +1,15 @@
 "use server";
 
-let likes = 0;
+let like = {};
 export default async function LikePost(previousState , formdata){
     const slug = formdata.get("slug");
-    console.log("like ation executed")
-    console.log(slug);
+    
+    if (like[slug]===undefined){
+        like[slug] = 1;
+    }
+    else{
+        like[slug] = like[slug] + 1;
+    }
 
-    likes=likes+1;
-
-    return likes;
+    return like[slug];
 }
