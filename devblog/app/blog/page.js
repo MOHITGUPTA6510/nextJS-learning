@@ -1,11 +1,19 @@
 import Link from "next/link";
 import BlogCard from "@/components/BlogCard";
-// import {blogs} from "@/data/blogs";
+import { getPosts } from "@/lib/posts";
 
-export default async function BlogPage() {
+export default async function BlogPage({searchParams}) {
 
-  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const data = await response.json();
+  const {search} = await searchParams;
+  console.log(search);
+
+  const data = await getPosts();
+
+  const filteredPosts = search
+    ? data.filter((post) =>
+        post.title.toLowerCase().includes(search.toLowerCase())
+      )
+    : data;
 
   return (
     <>
@@ -32,7 +40,7 @@ export default async function BlogPage() {
     </main>
     <div className="blog-card-container" >
         {
-          data.map((blog) => {
+          filteredPosts.map((blog) => {
             return(
               
                 <BlogCard  heading={blog.title} description={blog.body} key ={blog.id} slug ={blog.title.toLowerCase().replaceAll(" ", "-")}/>

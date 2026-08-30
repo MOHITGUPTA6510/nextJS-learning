@@ -58,3 +58,7 @@ export default async function SlugPost({params}){
         
     );
 }
+
+// export default aync function ({searchParams}){
+//     const {search} = await searchParams;
+// }
