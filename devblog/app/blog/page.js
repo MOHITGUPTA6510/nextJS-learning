@@ -17,6 +17,8 @@ export default async function BlogPage({searchParams}) {
 
   return (
     <>
+
+
     <main 
       className="blog-page"
     >
@@ -38,6 +40,19 @@ export default async function BlogPage({searchParams}) {
       </Link>
       
     </main>
+
+    <form method="GET" className="search-form">
+    <input
+        type="text"
+        name="search"
+        placeholder="Search articles..."
+    />
+
+    <button type="submit">
+        Search
+    </button>
+</form>
+
     <div className="blog-card-container" >
         {
           filteredPosts.map((blog) => {
