@@ -3,6 +3,24 @@ import { notFound } from "next/navigation";
 import {blogs} from "@/data/blogs";
 import LikeButton from "@/components/LikeButton";
 
+
+export async function generateMetadata({params}){
+    const { slug } = await params;
+    const data = blogs.find((blog) => {
+        return (blog.slug === slug);
+    });
+
+    if (data === undefined){
+            notFound();
+    }
+
+    return{
+        title : data.heading,
+        description : data.description
+    };
+
+}
+
 export default async function SlugPost({params}){
     console.log("Running on the server");
     
