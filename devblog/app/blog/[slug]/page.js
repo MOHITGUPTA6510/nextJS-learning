@@ -1,18 +1,14 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-// import {blogs} from "@/data/blogs";
 import LikeButton from "@/components/LikeButton";
+import {getPostBySlug} from "@/lib/posts";
 
 
 export async function generateMetadata({params}){
 
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-    const dataa = await response.json();
-
     const { slug } = await params;
-    const data = dataa.find((post) => {
-        return (post.title.toLowerCase().replaceAll(" ", "-") === slug);
-    });
+
+    const data  =  await getPostBySlug(slug);
 
     if (data === undefined){
             notFound();
@@ -27,18 +23,15 @@ export async function generateMetadata({params}){
 
 export default async function SlugPost({params}){
     
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-    const dataa = await response.json();
     
     const { slug } = await params;
-    const data = dataa.find((post) => {
-        return (post.title.toLowerCase().replaceAll(" ", "-") === slug);
-    });
+
+    const data = await getPostBySlug(slug);
 
     if (data === undefined){
             notFound();
     }
-
+    
     return (
         
         <div className="slug-page">
