@@ -1,13 +1,28 @@
 "use client";
 
-import { useState } from "react";
 
-export default function LikeButton(){
-    const [likeCount , setLikeCount] = useState(0);
-    
+import { useActionState} from "react";
+import LikePost from "@/app/action.js";
+
+export default function LikeButton({slug}){
+    const [state , formAction , isPending] = useActionState(
+        LikePost,
+        null
+    );
 
 
     return(
-        <button className= "like-button" onClick={() => {setLikeCount(likeCount+1)}}> {likeCount} Like</button>
+        <form action={formAction}>
+            
+            <input
+                type="hidden"
+                name="slug"
+                value={slug} 
+            />
+            <button    
+                className= "like-button" 
+            > {isPending ? "Liking..." : state ? `${state} ❤️` : "Like ❤️"}
+            </button>
+        </form>
     );
 }

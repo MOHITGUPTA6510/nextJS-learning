@@ -27,7 +27,7 @@ export default async function SlugPost({params}){
             <Link href="/blog" className="slug-page-link">Back to Blog</Link>
             <br></br>
 
-            <LikeButton className/>
+            <LikeButton slug={slug}/>
         </div>
         
     );
