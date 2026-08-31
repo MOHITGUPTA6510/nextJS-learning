@@ -1,4 +1,14 @@
+import { abortOnSynchronousPlatformIOAccess } from "next/dist/server/app-render/dynamic-rendering";
 import { cookies } from "next/headers";
+
+async function setSession() {
+    "use server";
+
+    const cookieStore = await cookies();
+
+    cookieStore.set("session" , "abc123");
+    
+}
 
 export default async function CookiesTest() {
     
@@ -11,6 +21,12 @@ export default async function CookiesTest() {
             <p>
                 Session : {session?.value || "no Cookie"}
             </p>
+
+            <form action={setSession}>
+                <button>
+                    login
+                </button>
+            </form>
         </div>
     );
 }
