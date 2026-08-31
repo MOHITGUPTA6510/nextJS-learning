@@ -1,4 +1,3 @@
-import { abortOnSynchronousPlatformIOAccess } from "next/dist/server/app-render/dynamic-rendering";
 import { cookies } from "next/headers";
 
 async function setSession() {
