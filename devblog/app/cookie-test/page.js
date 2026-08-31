@@ -10,6 +10,15 @@ async function setSession() {
     
 }
 
+async function logout() {
+    "use server";
+
+    const cookieStore = await cookies();
+
+    cookieStore.delete("session");
+
+}
+
 export default async function CookiesTest() {
     
     const cookieStore = await cookies();
@@ -25,6 +34,11 @@ export default async function CookiesTest() {
             <form action={setSession}>
                 <button>
                     login
+                </button>
+            </form>
+            <form action={logout}>
+                <button>
+                    logout
                 </button>
             </form>
         </div>
