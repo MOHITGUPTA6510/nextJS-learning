@@ -59,7 +59,6 @@ export default async function BlogPage({searchParams}) {
             return(
               
                 <BlogCard  heading={blog.title} description={blog.body} key ={blog.id} slug ={blog.title.toLowerCase().replaceAll(" ", "-")}/>
-              
             );
           })
         }

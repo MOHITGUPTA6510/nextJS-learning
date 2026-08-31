@@ -13,3 +13,11 @@ export default async function LikePost(previousState , formdata){
 
     return like[slug];
 }
+
+export async function addComment(previousState , formdata){
+    const comment = formdata.get("comment");
+    if (!comment || comment.trim() === "") {
+        return "Comment cannot be empty";
+    }
+    return `Comment Added : ${comment}`;
+}
