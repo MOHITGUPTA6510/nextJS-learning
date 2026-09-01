@@ -16,7 +16,12 @@ export default function AddComment(){
                 {isPending ? "Adding..." : "Add Comment"}
             </button>
 
-            {state && <p>{state}</p>}
+            {state && (
+                <p>
+                    {state.success ? "✅ " : "❌ "}
+                    {state.message}
+                </p>
+            )}
         </form>
     );
 }
