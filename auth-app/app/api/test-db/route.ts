@@ -12,6 +12,17 @@ export async function POST(request: Request) {
             {status : 400}
         );
     }
+    
+    const existingUser = await db.query(
+        "SELECT id FROM user WHERE email = $1",
+        [email]
+    );
+    if(existingUser.rows.length>0){
+        return Response.json(
+            {error: "Email already registered"},
+            {status : 409}
+        );
+    }
 
     const passwordHash = await bcrypt.hash(password, 10);
 
