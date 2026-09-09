@@ -6,6 +6,13 @@ export async function POST(request: Request) {
 
     const { name, email, password } = body;
 
+    if(!name || !email || !password){
+        return Response.json(
+            {error : "All field are required"},
+            {status : 400}
+        );
+    }
+
     const passwordHash = await bcrypt.hash(password, 10);
 
     const result = await db.query(
