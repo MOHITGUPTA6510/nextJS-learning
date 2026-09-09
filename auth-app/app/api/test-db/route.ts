@@ -1,5 +1,6 @@
 import { db } from "@/lib/db";
 import bcrypt from "bcrypt";
+import { Passions_Conflict } from "next/font/google";
 
 export async function POST(request: Request) {
     const body = await request.json();
@@ -9,6 +10,13 @@ export async function POST(request: Request) {
     if(!name || !email || !password){
         return Response.json(
             {error : "All field are required"},
+            {status : 400}
+        );
+    }
+
+    if(password.length >8){
+        return Response.json(
+            {error : "Password must be at least 8 charecters "},
             {status : 400}
         );
     }
