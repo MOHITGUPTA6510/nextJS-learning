@@ -6,6 +6,7 @@ export default function TestRegister() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [message , setMessage] = useState("");
 
     async function register() {
 
@@ -25,7 +26,12 @@ export default function TestRegister() {
 
         const data = await response.json();
 
-        console.log(data);
+        if(response.ok){
+            setMessage("Registraton is successfull");
+        } else {
+            setMessage(data.error);
+            
+        }
     }
 
     return (
@@ -54,6 +60,7 @@ export default function TestRegister() {
             <button onClick={register}>
                 Register
             </button>
+            <p>{message}</p>
         </div>
     );
 }
