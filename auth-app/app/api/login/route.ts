@@ -44,7 +44,7 @@ export async function POST(request: Request){
         [sessionId, user.id, expiresAt]
     );
 
-    return Response.json({
+    const response =  Response.json({
         message : "Login Successful",
         user : {
             id : user.id,
@@ -52,4 +52,10 @@ export async function POST(request: Request){
             email : user.email,
         },
     });
+
+    response.headers.set(
+        "Set-Cookie",
+        `session_id=${sessionId}; HttpOnly; Path=/; Max-Age=604800; SameSite=Lax`
+    );
+    return response;
 }

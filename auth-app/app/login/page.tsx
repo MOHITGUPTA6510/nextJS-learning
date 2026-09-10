@@ -24,11 +24,10 @@ export default function (){
 
         const data = await response.json();
 
-        if(response.ok){
-            setMessage("Registraton is successfull");
+        if (response.ok) {
+            window.location.href = "/profile";
         } else {
             setMessage(data.error);
-            
         }
 
     }
