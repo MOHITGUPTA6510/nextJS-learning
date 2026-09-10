@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function TestRegister() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message , setMessage] = useState("");
+    const router = useRouter();
 
     async function register() {
 
@@ -32,6 +34,9 @@ export default function TestRegister() {
             setMessage(data.error);
             
         }
+    }
+    function redirect(){
+        router.push("/login")
     }
 
     return (
@@ -59,6 +64,10 @@ export default function TestRegister() {
 
             <button onClick={register}>
                 Register
+            </button>
+
+            <button onClick={redirect}>
+                login
             </button>
             <p>{message}</p>
         </div>

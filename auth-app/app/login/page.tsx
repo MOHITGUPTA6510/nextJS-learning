@@ -1,11 +1,13 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation"; 
 
-export default function (){
+export default function Login(){
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message , setMessage] = useState("");
+    const router = useRouter();
 
     async function login(){
         const response = await fetch("/api/login",{
@@ -25,11 +27,15 @@ export default function (){
         const data = await response.json();
 
         if (response.ok) {
-            window.location.href = "/profile";
+            router.push("/profile");
         } else {
             setMessage(data.error);
-        }
+    }
 
+    }
+
+    function redirect(){
+        router.push("/test-register")
     }
 
     return (
@@ -50,6 +56,10 @@ export default function (){
 
             <button onClick={login}>
                 Login
+            </button>
+
+            <button onClick={redirect}>
+                Register
             </button>
             <p>{message}</p>
         </div>
