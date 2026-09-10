@@ -1,5 +1,6 @@
 import { db } from "@/lib/db"
 import bcrypt from "bcrypt";
+import crypto from "crypto";
 
 export async function POST(request: Request){
     const body = await request.json();
@@ -30,6 +31,18 @@ export async function POST(request: Request){
             {status : 401}
         );
     }
+
+    const sessionId = crypto.randomBytes(32).toString("hex");
+
+    const expiresAt = new Date();
+
+    expiresAt.setDate(expiresAt.getDate() + 7);
+
+    await db.query(
+        `INSERT INTO sessions (id, user_id, expires_at)
+        VALUES ($1, $2, $3)`,
+        [sessionId, user.id, expiresAt]
+    );
 
     return Response.json({
         message : "Login Successful",
