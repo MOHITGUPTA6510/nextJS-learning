@@ -29,7 +29,7 @@ export default function TestRegister() {
         const data = await response.json();
 
         if(response.ok){
-            setMessage("Registraton is successfull");
+            router.push("/login");
         } else {
             setMessage(data.error);
             
