@@ -1,6 +1,7 @@
 import { db } from "@/lib/db";
 import crypto from "crypto";
 import bcrypt from "bcrypt";
+import { transporter } from "@/lib/email";
 
 export async function POST(request: Request) {
     const body = await request.json();
@@ -41,6 +42,13 @@ export async function POST(request: Request) {
         VALUES ($1, $2, $3)`,
         [user.id, otpHash, expiresAt]
     );
+
+    await transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to: email,
+        subject: "Password Reset OTP",
+        text: `Your password reset OTP is: ${otp}. It will expire in 10 minutes.`,
+    });
 
     return Response.json({
         message: "OTP generated successfully",

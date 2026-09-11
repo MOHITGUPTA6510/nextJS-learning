@@ -38,6 +38,10 @@ export default function Login(){
         router.push("/test-register")
     }
 
+    function forgotPassword() {
+        window.location.href = "/forgot-password";
+    }
+
     return (
         <div>
             <input
@@ -60,6 +64,10 @@ export default function Login(){
 
             <button onClick={redirect}>
                 Register
+            </button>
+
+            <button onClick={forgotPassword}>
+                Forget Password
             </button>
             <p>{message}</p>
         </div>
